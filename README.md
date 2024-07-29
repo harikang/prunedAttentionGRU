@@ -1,24 +1,38 @@
 # Human Activity Recognition through Augmented Wi-Fi CSI Signals using Lightweight Attention-GRU model using Pruning
 
-This repository contains the source code for [Human Activity Recognition through Augmented Wi-Fi CSI Signals using Lightweight Attention-GRU model using Pruning].
+**<span style="font-size:100px;">This repository contains the source code for [Human Activity Recognition through Augmented Wi-Fi CSI Signals using Lightweight Attention-GRU model using Pruning].</span>**
 
 ## Overview
 
-This project provides the source code for reproducing the algorithms and experiments described in the [Human Activity Recognition through Augmented Wi-Fi CSI Signals using Lightweight Attention-GRU model using Pruning] paper. Through this source code, you can reproduce the results of the paper and conduct additional experiments.
+**<span style="font-size:100px;">This project provides the source code for reproducing the algorithms and experiments described in the [Human Activity Recognition through Augmented Wi-Fi CSI Signals using Lightweight Attention-GRU model using Pruning] paper. Through this source code, you can reproduce the results of the paper and conduct additional experiments. </span>**
 
-The figure below shows the model architecture, which includes a single layer of GRU and an attention module.
-![Model Structure](https://github.com/harikang/prunedAttentionGRU/blob/main/fig/pretrain_git.png)  
+**<span style="font-size:60px;">The figure below shows the model architecture, which includes a single layer of GRU and an attention module.</span>**  
+<div align="center">
+  <img src="https://github.com/harikang/prunedAttentionGRU/blob/main/fig/pretrain_git.png" alt="Model Architecture">
+</div>
 
-We applied pruning to the model to reduce its size, and the process is illustrated in the figure below.
+**<span style="font-size:60px;"> We applied pruning to the model to reduce its size, and the process is illustrated in the figure below.</span>**  
+
 ![Overview](https://github.com/harikang/prunedAttentionGRU/blob/main/fig/overview_git.png)
 
-By sharing the results of only the ARIL Dataset, we can see the distribution of weights before and after pruning as shown in the figure below. Additionally, the confusion matrix and the history of loss and accuracy help us understand the performance of our model.
-[1] Distribution of Weight before and after pruning
-![Distribution](https://github.com/harikang/prunedAttentionGRU/blob/main/fig/distribution.png)
-[2] Confusion Matrix of ARIL Dataset
-![confusionmatrix](https://github.com/harikang/prunedAttentionGRU/blob/main/fig/128_32_confusionmatrix.png)
-[3] Plot of Loss and Accuracy history 
-![history](https://github.com/harikang/prunedAttentionGRU/blob/main/fig/128_32.png)
+**<span style="font-size:60px;"> By sharing the results of only the ARIL Dataset, we can see the distribution of weights before and after pruning as shown in the figure below. Additionally, the confusion matrix and the history of loss and accuracy help us understand the performance of our model.  </span>**
+
+[1] Distribution of Weight before and after pruning  
+
+<div align="center">
+  <img src="https://github.com/harikang/prunedAttentionGRU/blob/main/fig/distribution.png" alt="Distribution">
+</div>
+
+[2] Confusion Matrix of ARIL Dataset  
+
+<div align="center">
+  <img src="https://github.com/harikang/prunedAttentionGRU/blob/main/fig/128_32_confusionmatrix.png" alt="confusionmatrix">
+</div>
+
+[3] Plot of Loss and Accuracy history  
+
+![history](https://github.com/harikang/prunedAttentionGRU/blob/main/fig/128_32.png)  
+
 ## Contents
 
 - `tools/`: Experimental results and visualization materials
