@@ -1,1 +1,3 @@
-aril dataset
+you have to add 'test_data_split_amp.mat' and 'train_data_split_amp.mat' in this Folder.  
+
+
