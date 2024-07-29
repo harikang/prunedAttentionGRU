@@ -7,18 +7,18 @@ This repository contains the source code for [Human Activity Recognition through
 This project provides the source code for reproducing the algorithms and experiments described in the [Human Activity Recognition through Augmented Wi-Fi CSI Signals using Lightweight Attention-GRU model using Pruning] paper. Through this source code, you can reproduce the results of the paper and conduct additional experiments.
 
 The figure below shows the model architecture, which includes a single layer of GRU and an attention module.
-![Model Structure]()  
+![Model Structure](https://github.com/harikang/prunedAttentionGRU/blob/main/fig/pretrain_git.png)  
 
 We applied pruning to the model to reduce its size, and the process is illustrated in the figure below.
 ![Overview](https://github.com/harikang/prunedAttentionGRU/blob/main/fig/overview_git.png)
 
 By sharing the results of only the ARIL Dataset, we can see the distribution of weights before and after pruning as shown in the figure below. Additionally, the confusion matrix and the history of loss and accuracy help us understand the performance of our model.
 [1] Distribution of Weight before and after pruning
-
+![Distribution](https://github.com/harikang/prunedAttentionGRU/blob/main/fig/distribution.png)
 [2] Confusion Matrix of ARIL Dataset
-
+![confusionmatrix](https://github.com/harikang/prunedAttentionGRU/blob/main/fig/128_32_confusionmatrix.png)
 [3] Plot of Loss and Accuracy history 
-
+![history](https://github.com/harikang/prunedAttentionGRU/blob/main/fig/128_32.png)
 ## Contents
 
 - `tools/`: Experimental results and visualization materials
