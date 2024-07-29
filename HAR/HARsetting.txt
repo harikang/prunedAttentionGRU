@@ -1,0 +1,1 @@
+you have to add data folder(from HAR Experiment-3) and add X_test.npy, X_train.npy, X_valid.npy, y_test.npy, y_train.npy, and y_valid.npy.  
