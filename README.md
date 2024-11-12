@@ -1,4 +1,4 @@
-# Human Activity Recognition through Augmented Wi-Fi CSI Signals using Lightweight Attention-GRU model using Pruning
+# Human Activity Recognition through Augmented WiFi CSI Signals by Lightweight Attention-GRU
 
 **<span style="font-size:100px;">This repository contains the source code for [Human Activity Recognition through Augmented Wi-Fi CSI Signals using Lightweight Attention-GRU model using Pruning].</span>**
 
