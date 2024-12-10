@@ -102,3 +102,38 @@ def train_model(device, model, criterion, optimizer, scheduler, num_epochs, trai
     # Load best model weights
     model.load_state_dict(best_model_wts)
     return model, loss_hist, acc_hist
+
+def cross_validate(device, model_class, criterion, optimizer_class, scheduler_class, dataset, num_epochs=50, n_splits=5, batch_size=32, p=[0.7,0.3]):
+    """
+    Perform 5-fold cross validation.
+    model_class: A callable that returns a new instance of the model (uninitialized)
+    optimizer_class: A callable that takes model.parameters() and returns an optimizer
+    scheduler_class: A callable that takes optimizer and returns a scheduler
+    """
+    kf = KFold(n_splits=n_splits, shuffle=True, random_state=42)
+    fold_accuracies = []
+
+    for fold, (train_idx, test_idx) in enumerate(kf.split(range(len(dataset)))):
+        print(f"Fold {fold+1}/{n_splits}")
+
+        train_subset = Subset(dataset, train_idx)
+        test_subset = Subset(dataset, test_idx)
+
+        trainloader = DataLoader(train_subset, batch_size=batch_size, shuffle=True)
+        testloader = DataLoader(test_subset, batch_size=batch_size, shuffle=False)
+
+        # Instantiate a new model for each fold
+        model = model_class().to(device)
+        optimizer = optimizer_class(model.parameters())
+        scheduler = scheduler_class(optimizer)
+
+        model, loss_hist, acc_hist = train_model(device, model, criterion, optimizer, scheduler, num_epochs, trainloader, testloader, p=p)
+
+        # Best accuracy for this fold is the max test accuracy recorded.
+        best_acc = max(acc_hist['test'])
+        fold_accuracies.append(best_acc)
+        print(f"Fold {fold+1} Best Accuracy: {best_acc:.2f}")
+
+    print(f"Average accuracy across {n_splits} folds: {np.mean(fold_accuracies):.2f}")
+    return fold_accuracies
+    
